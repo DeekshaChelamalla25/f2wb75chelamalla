@@ -3,12 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to Pug
-  button(type = "button", class = "btn btn-success", onClick = "clicks()") Click<br>
-  div(id = "target") Click on me
+  button(type = "button", class = "btn btn-success", onClick = "doBump()") Click<br>
+  div(id = "bump") Bump the count
 
     script.
       var count = 0;
-      function clicks(){
+      var bump = 1;
+      function doBump(){
         count = count + 1;
-        document.getElementById("target").innerHTML = 'Clicked '+ count +' times';
+        bump = 1;
+        document.getElementById("bump").innerHTML = 'Count '+ count +' bump' + count;
       }
